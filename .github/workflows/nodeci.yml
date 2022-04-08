@@ -1,21 +1,23 @@
-name: Cypress Functional Tests
+name: Node CI
 
-on: [push]
+on: push
 
 jobs:
-  cypress-run:
+  build:
     runs-on: ubuntu-latest
-    container: cypress/browsers:node12.18.3-chrome87-ff82
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
 
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
-      - name:
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@main
+
+      - name: Install 🔧
+        run: npm install
+
+      - name: Build 🏗️
+        run: npm run build
+
+      - name: Start 👌🏻
         run: npm start
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
-        with:
-          # Specify Browser since container image is compile with Firefox
-          browser: chrome
+
+      - name: Cypress 👺
+        run: npm cypress:open
