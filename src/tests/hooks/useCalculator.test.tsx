@@ -15,5 +15,5 @@ test("square root", () => {
     const { result } = renderHook(() => useCalculator());
     const { square } = result.current;
     const res = square("1", "1");
-    expect(res).toEqual("2");
+    expect(res).toEqual("1");
 });
