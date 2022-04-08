@@ -13,11 +13,5 @@ jobs:
       - name: Install 🔧
         run: npm install
 
-      - name: Build 🏗️
-        run: npm run build
-
-      - name: Start 👌🏻
-        run: npm start
-
-      - name: Cypress 👺
-        run: npm cypress:open
+      - name: Test 👌🏻
+        run: npm run test
