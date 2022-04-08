@@ -1,4 +1,4 @@
-name: Cypress Tests using Cypress Docker Image
+name: Cypress Functional Tests
 
 on: [push]
 
@@ -12,6 +12,8 @@ jobs:
 
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
+      - name:
+        run: npm start
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
